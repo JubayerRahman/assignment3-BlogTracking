@@ -19,7 +19,7 @@ export const verifyToken:RequestHandler = async(req, res, next)=>{
         console.log(verifyToken);
         req.body.user = verifyToken
 
-        if (verifyToken.role == "user") {
+        if (verifyToken.role == "user" || verifyToken.role == "admin" ) {
             next()
         }
         
